@@ -2,11 +2,13 @@
   "name": "rapid-prototyping",
   "version": "1.0.0",
   "description": "This project uses StorybookJS, Drupal twig, and US Web Design System (USWDS) for rapid prototyping.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 4040",
+    "build-storybook": "storybook build",
+    "start": "npm run storybook"
   },
   "keywords": [],
   "author": "james.mejia@bixal.com",

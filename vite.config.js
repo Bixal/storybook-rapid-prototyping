@@ -6,9 +6,9 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        includePaths: ["./node_modules/@uswds/uswds/packages"]
-      }
-    }
+        includePaths: ["./node_modules/@uswds/uswds/packages"],
+      },
+    },
   },
   plugins: [
     twig({
@@ -17,8 +17,8 @@ export default defineConfig({
         components: join(__dirname, "./stories/components"),
         pages: join(__dirname, "./stories/pages"),
         partials: join(__dirname, "./stories/partials"),
-      }
+      },
     }),
   ],
-  framework: "html"
+  framework: "html",
 });
