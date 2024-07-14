@@ -22,6 +22,7 @@ npm install
 ## Running locally
 
 ```zsh
+# Opens a window on http://localhost:4040/.
 npm start
 ```
 
