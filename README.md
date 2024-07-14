@@ -4,6 +4,8 @@ This project uses StorybookJS, Drupal twig, and US Web Design System (USWDS) for
 
 ## Tech stack
 
+**Node:** LTS 20+, recommend [NVM](https://github.com/nvm-sh/nvm#installing-and-updating) to manage different node versions.
+
 **Component library:** StorybookJS w/ Vite
 
 **Templates:** Drupal Twig
@@ -13,4 +15,18 @@ This project uses StorybookJS, Drupal twig, and US Web Design System (USWDS) for
 
 ## Installation
 
-TK
+```zsh
+npm install
+```
+
+## Running locally
+
+```zsh
+npm start
+```
+
+## Contributing
+
+Pull requests are welcome.
+
+For major changes, please open an issue first to discuss what you would like to change.
