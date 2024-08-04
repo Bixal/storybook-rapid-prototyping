@@ -4,6 +4,8 @@ const config = {
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
+  // Allows you to use USWDS images and fonts.
+  staticDirs: ["../node_modules/@uswds/uswds/dist"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",

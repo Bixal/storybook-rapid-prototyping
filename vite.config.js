@@ -12,8 +12,13 @@ export default defineConfig({
   },
   plugins: [
     twig({
-      // Allows namespaces in templates, like `@components/COMPONENT_NAME.
+      /**
+       * Allows namespaces in twig templates.
+       * @example
+       * {% include "@components/blurb/blurb.html.twig" with blurb %}
+       */
       namespaces: {
+        uswds: join(__dirname, "./node_modules/@uswds/uswds/dist"),
         components: join(__dirname, "./stories/components"),
         pages: join(__dirname, "./stories/pages"),
         partials: join(__dirname, "./stories/partials"),
