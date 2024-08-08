@@ -1,0 +1,13 @@
+{% include "@components/header/header.html.twig" with header %}
+
+<main id="main-content">
+  {# {% if hero %}
+  {% include "@components/hero/hero.html.twig" with hero %}
+  {% endif %} #}
+
+  {% block content %}
+    Hello, from content block.
+  {% endblock %}
+</main>
+
+{% include "@components/footer/footer.html.twig" with footerContent %}
