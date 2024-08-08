@@ -1,13 +1,14 @@
 # Rapid prototyping starter kit
 
-This project uses StorybookJS, Drupal twig, and US Web Design System (USWDS) for rapid prototyping.
+Rapid prototyping using StorybookJS, US Web Design System (USWDS), and Drupal Twig.
 
 ## Tech stack
 
 - **Node:** LTS 20+, recommend [NVM](https://github.com/nvm-sh/nvm#installing-and-updating) to manage different node versions.
 - **Component library:** StorybookJS w/ Vite
-- **Templates:** Drupal Twig
-- **Styles:** USWDS & SASS
+- **Templates:** [Drupal Twig](https://github.com/larowlan/vite-plugin-twig-drupal)
+  - [Drupal twig coding standards](https://www.drupal.org/docs/develop/coding-standards/twig-coding-standards)
+- **Styles:** [SASS](https://sass-lang.com/documentation) & [USWDS](https://designsystem.digital.gov)
 
 ## Installation
 
