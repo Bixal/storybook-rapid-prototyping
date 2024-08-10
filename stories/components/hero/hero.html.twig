@@ -1,15 +1,31 @@
-<section class="usa-hero" aria-label="Introduction">
+{#
+/**
+  * Hero component.
+  *
+  * Available variables:
+  * - aria_label: String for custom aria-label. Must be unique per page.
+  * - heading_alt: String for alternative heading style.
+  * - heading: String for default heading style.
+  * - body: String body text.
+  * - cta: Object for call to action button.
+**/
+#}
+<section class="usa-hero" aria-label="{{ aria_label | default("Introduction") }}">
   <div class="grid-container">
     <div class="usa-hero__callout">
       <h1 class="usa-hero__heading">
-        <span class="usa-hero__heading--alt">USA Hero:</span>
-        Brings attention to a project priority
+        <span class="usa-hero__heading--alt">
+          {{ heading_alt | default("USA Hero:") }}
+        </span>
+        {{ heading | default("Brings attention to a project priority") }}
       </h1>
       <p>
-        Some short explanatory text. You don’t need more than a couple of
-        sentences.
+        {{ body | default("Some short explanatory text. You don’t need more than a couple of
+        sentences.") }}
       </p>
-      <a class="usa-button" href="javascript:void(0)">Call to action</a>
+      {% if cta %}
+        Call to action.
+      {% endif %}
     </div>
   </div>
 </section>
