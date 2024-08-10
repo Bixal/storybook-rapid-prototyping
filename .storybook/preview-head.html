@@ -1,13 +1,13 @@
 <!-- Create a StorybookJS theme if heavy modifications required. -->
 <!-- https://storybook.js.org/docs/configure/user-interface/theming -->
 <style>
-  :where(p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p)),
-  :where(li:not(.sb-anchor, .sb-unstyled, .sb-unstyled li)) {
+  .sbdocs :where(p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p)),
+  .sbdocs :where(li:not(.sb-anchor, .sb-unstyled, .sb-unstyled li)) {
     font-size: max(min(1rem), 20px) !important;
   }
 
   /* Ordered list numbers. */
-  :where(ol:not(.sb-anchor, .sb-unstyled, .sb-unstyled)) {
+  .sbdocs :where(ol:not(.sb-anchor, .sb-unstyled, .sb-unstyled)) {
     li {
       list-style-type: decimal-leading-zero;
     }
