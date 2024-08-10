@@ -27,7 +27,7 @@ npm start
 ### Using USWDS Static assets (images & fonts)
 
 > [!NOTE]
-> When using in Drupal theme, you'll need to copy over fonts/images. This setup works specifically for StorybookJS.
+> When using in Drupal theme, you'll need to copy over USWDS fonts/images. This setup works specifically for StorybookJS.
 
 Copying markup from [USWDS components](https://designsystem.digital.gov/components/) can result in broken images. To fix this, simply remove the `assets` in the path.
 
