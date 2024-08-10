@@ -1,0 +1,20 @@
+{#
+/**
+  * USA Button
+  *
+  * Available variables:
+  * - variant: String for component variant.
+  * - label: String for button text.
+**/
+#}
+
+{% if attributes is empty %}
+  {% set attributes = create_attribute() %}
+{% endif %}
+
+{% set button_classes = [
+  "usa-button",
+  ( variant ? "usa-button--" ~ variant)
+] | merge(additional_classes | default([])) %}
+
+<button {{ attributes.addClass(button_classes) }} type="button">{{ label | default("Button") }}</button>

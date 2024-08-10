@@ -29,3 +29,16 @@ export const Default = {};
 ```
 
 Full documentation in [How to write stories `[storybook.js.org]`](https://storybook.js.org/docs/writing-stories).
+
+## Debugging templates
+
+You can see what variables are available in twig templates with the `dump()` function.
+
+```html
+<!-- Example from button.html.twig file. -->
+{{ dump(_context) }}
+
+<!-- Returns -->
+object(2) { [attributes]=> object(0) { } [button_classes]=> object(1) { [0]=>
+string(10) "usa-button" } }
+```
