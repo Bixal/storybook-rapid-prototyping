@@ -6,9 +6,9 @@ We're going to go to the USWDS website and grab USA Banner markup for all of our
 1. Expand the component code accordion.
 1. Copy markup and paste into `./stories/components/banner/banner.html.twig`.
 1. Remove extra markup so that you're left with a **single** Banner variant.
-1. Update image paths from `./assets/img` → `./img`. <i>This will use the images from the USWDS node package.</i>
+1. Fix images by updating the paths from `/assets/img` → `/img`. <i>This will use the images from the USWDS node package.</i>
 
-1. Add the component to your base template. Our vite config allows us to reference components with a namespace shorthand.
+1. Add the component to your base template. Our vite config allows us to reference components with a namespace shorthand `@components`.
 1. Include this static component with a twig include:
 
    ```html
