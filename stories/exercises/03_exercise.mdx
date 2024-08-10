@@ -20,11 +20,11 @@ We've already documented our component variables in `hero.html.twig:5`. Let's ad
     },
    }
    ```
-1. You should now be able to modify the strings in real time.
-1. Let's modify the CTA so that it re-uses our existing button. Open `/stories/components/hero/hero.html.twig:27`.
-1. Replace the string with a twig include for the button component. Use the `@components` shorthand for easier pathing. _These shorthands were setup in `vite.config.js`_
+1. You should see the settings table in your Story. Now we can modify the content in real time.
+1. Let's modify the CTA so that it re-uses our button component. Open `/stories/components/hero/hero.html.twig:27`.
+1. Replace the CTA string with a twig include for the button component. Use the `@components` shorthand for easier pathing. _These shorthands were setup in `vite.config.js`_
    ```html
-   {% if cta %} {% include "@components/button/button.html.twig" %} {% endif %}
+   {% include "@components/button/button.html.twig" %}
    ```
 1. Our button is now included, but it's not dynamic. We can fix that with a few changes.
 1. Open `hero.stories.js` and change `cta`'s value from a string to an object that takes a `label` and `variant`.
@@ -36,7 +36,7 @@ We've already documented our component variables in `hero.html.twig:5`. Let's ad
   },
 ```
 
-1. We can pass our hero cta data by passing the object in the twig include.
+1. We can use our hero cta to modify button by passing the object in the twig include.
 
 ```html
 {% include "@components/button/button.html.twig" with cta %}
