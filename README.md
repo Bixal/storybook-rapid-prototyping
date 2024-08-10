@@ -31,10 +31,11 @@ npm start
 
 Copying markup from [USWDS components](https://designsystem.digital.gov/components/) can result in broken images. To fix this, simply remove the `assets` in the path.
 
-Below we're referencing the static assets in USWDS node package. This is set in `.storybook/main.js:8`.
+You can reference static assets in USWDS node package. This is set in `.storybook/main.js:8`. Example below.
 
 ```diff
 <!-- identifier.html.twig -->
+<!-- Updating image paths from copied USWDS markup. -->
 - src="/assets/img/circle-gray-20.svg"
 + src="/img/circle-gray-20.svg"
 ```

@@ -1,9 +1,9 @@
-{% include "@components/header/header.html.twig" with header %}
+{% include "@components/header/header.html.twig" %}
 
 <main id="main-content">
-  {# {% if hero %}
-  {% include "@components/hero/hero.html.twig" with hero %}
-  {% endif %} #}
+  {% if hero %}
+  {% include "@components/hero/hero.html.twig" %}
+  {% endif %}
 
   {% block content %}
     Hello, from content block.
