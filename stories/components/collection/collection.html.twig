@@ -1,0 +1,23 @@
+{#
+/**
+  * A USA collection of items.
+  *
+  * Available variables:
+  * - item: Object of content.
+**/
+#}
+
+{% if attributes is empty %}
+  {% set attributes = create_attribute() %}
+{% endif %}
+
+{% set collection_classes = [
+  "usa-button",
+  ( variant ? "usa-button--" ~ variant)
+] | merge(additional_classes | default([])) %}
+
+<ul class="usa-collection">
+  {% for item in collection %}
+    {% include "@components/collection/collection-item.html.twig" with item, ignore_missing %}
+  {% endfor %}
+</ul>
