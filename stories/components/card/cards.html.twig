@@ -1,0 +1,15 @@
+{#
+/**
+  * Card group
+  *
+  * Parent of the individual card component.
+  *
+  * Available variables:
+  * - cards: Array of card objects.
+**/
+#}
+<ul class="usa-card-group flex-column flex-no-wrap">
+  {% for card in cards %}
+    {% include "@components/card/card.html.twig" with card, ignore_missing %}
+  {% endfor %}
+</ul>

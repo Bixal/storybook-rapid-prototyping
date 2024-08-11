@@ -1,0 +1,53 @@
+{#
+/**
+  * USA Collection item.
+  *
+  * Available variables:
+  * - item.month: Optional string month.
+  * - item.day: Optional string day.
+  * - item.heading: String heading.
+  * - item.body: String body content.
+  * - item.domain: Optional string domain.
+**/
+#}
+<li class="usa-collection__item">
+  {% if item.month or item.day %}
+  <div class="usa-collection__calendar-date">
+    {# TODO: Fix date timestamp. #}
+    <time datetime="2024-00-00T14:00">
+      {% if item.month %}
+      <span class="usa-collection__calendar-date-month">
+        {{ item.month }}
+      </span>
+      {% endif %}
+      {% if item.day %}
+      <span class="usa-collection__calendar-date-day">
+        {{ item.day }}
+      </span>
+      {% endif %}
+    </time>
+  </div>
+  {% endif %}
+  <div class="usa-collection__body">
+    <h4 class="usa-collection__heading">
+      <a href="javascript:void(0)" class="usa-link">
+        {{ item.heading | default("Collection heading") }}
+      </a>
+    </h4>
+    {% if item.body %}
+      <p class="usa-collection__description">
+        {{ item.body }}
+      </p>
+    {% endif %}
+    {% if item.domain %}
+    <div class="usa-collection__meta">
+      <div class="usa-collection__meta-item position-relative">
+        <svg class="usa-icon position-relative bottom-neg-2px" aria-hidden="true" role="img">
+          <use xlink:href="/img/sprite.svg#public"></use>
+        </svg>
+        {{ item.domain | default("Collection domain") }}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</li>
