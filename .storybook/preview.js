@@ -13,6 +13,12 @@ const preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      // Make sure Welcome is always first.
+      storySort: {
+        order: ["Welcome"],
+      },
+    },
   },
   docs: {
     toc: true, // Autogenerate table of contents.

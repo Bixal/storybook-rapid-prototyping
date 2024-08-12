@@ -1,0 +1,44 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Creating Stories" />
+
+# Creating stories
+
+Stories don't require much to setup. You'll need: a folder, a template, and a `.stories.js` file.
+
+```zsh
+./stories/commponents/header
+├── header.html.twig
+└── header.stories.js
+```
+
+Basic composition of stories requires importing the story, defining the component, and a default.
+
+```js
+import Header from "./header.html.twig";
+
+// Basics of a story.
+export default {
+  title: "Components/Header",
+  args: {}, // Define controls to make your stories more dynamic.
+  component: Header, // Attach the twig template.
+};
+
+// The variant that'll render in storybook.
+export const Default = {};
+```
+
+Full documentation in [How to write stories `[storybook.js.org]`](https://storybook.js.org/docs/writing-stories).
+
+## Debugging templates
+
+You can see what variables are available in twig templates with the `dump()` function.
+
+```html
+<!-- Example from button.html.twig file. -->
+{{ dump(_context) }}
+
+<!-- Returns -->
+object(2) { [attributes]=> object(0) { } [button_classes]=> object(1) { [0]=>
+string(10) "usa-button" } }
+```

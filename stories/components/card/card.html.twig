@@ -1,0 +1,50 @@
+{#
+/**
+  * USA Card component.
+  *
+  * Available variables:
+  * - variant: Optional string for USA Card flag variant.
+  * - card.header: String for html heading.
+  * - card.media: Placeholder image if not null.
+  * - card.body: String of HTML for body content.
+  * - card.footer: Objects of other components, for example button.
+**/
+#}
+
+{% if attributes is empty %}
+  {% set attributes = create_attribute() %}
+{% endif %}
+
+{% set card_classes = [
+  "usa-card",
+  ( variant ? "usa-card--" ~ variant )
+] | merge(card.additional_classes | default([])) %}
+
+<li {{ attributes.addClass(card_classes) }}>
+  <div class="usa-card__container">
+    <div class="usa-card__header">
+      {% block card_header %}
+        {{ card.header }}
+      {% endblock %}
+    </div>
+    {% if card.media is not null %}
+    <div class="usa-card__media">
+      <div class="usa-card__img">
+        <img src="/images/Built to Grow Alt.jpg" alt="A placeholder image">
+      </div>
+    </div>
+    {% endif %}
+    {% if card.body %}
+    <div class="usa-card__body">
+      {% block card_body %}{{ card.body }}{% endblock %}
+    </div>
+    {% endif %}
+    {% if card.footer %}
+    <div class="usa-card__footer">
+      {% block card_footer %}
+        {{ card.footer }}
+      {% endblock %}
+    </div>
+    {% endif %}
+  </div>
+</li>

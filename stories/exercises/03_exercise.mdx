@@ -1,0 +1,43 @@
+# 03. Composite components
+
+Sometimes you need to create a component that relies on other components. You can re-use components and data easily with storybook.
+
+Like the previous exercise, we'll make the hero component more dynamic. We'll also add our more dynamic button. The template has already been setup. Let's add args for: aria label, heading, body text, and a call to action.
+
+We've already documented our component variables in `hero.html.twig:5`. Let's add those as args in storybook to make it dynamic.
+
+1. Open `/stories/components/hero/hero.stories.js`.
+1. In `args` add the following settings.
+   ```js
+   export default {
+    ...
+    args: {
+      aria_label: "",
+      heading_alt: "",
+      heading: "",
+      body: "",
+      cta: "",
+    },
+   }
+   ```
+1. You should see the settings table in your Story. Now we can modify the content in real time.
+1. Let's modify the CTA so that it re-uses our button component. Open `/stories/components/hero/hero.html.twig:27`.
+1. Replace the CTA string with a twig include for the button component. Use the `@components` shorthand for easier pathing. _These shorthands were setup in `vite.config.js`_
+   ```html
+   {% include "@components/button/button.html.twig" %}
+   ```
+1. Our button is now included, but it's not dynamic. We can fix that with a few changes.
+1. Open `hero.stories.js` and change `cta`'s value from a string to an object that takes a `label` and `variant`.
+
+```js
+  cta: {
+    label: "Hero CTA",
+    variant: "",
+  },
+```
+
+1. We can use our hero cta to modify button by passing the object in the twig include.
+
+```html
+{% include "@components/button/button.html.twig" with cta %}
+```
