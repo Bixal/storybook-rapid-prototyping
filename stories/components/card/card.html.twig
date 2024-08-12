@@ -4,9 +4,9 @@
   *
   * Available variables:
   * - variant: Optional string for USA Card flag variant.
-  * - card.header: String for html heading.
+  * - card.header: Object for header content.
   * - card.media: Placeholder image if not null.
-  * - card.body: String of HTML for body content.
+  * - card.body: Object for body content.
   * - card.footer: Objects of other components, for example button.
 **/
 #}
@@ -36,7 +36,9 @@
     {% endif %}
     {% if card.body %}
     <div class="usa-card__body">
-      {% block card_body %}{{ card.body }}{% endblock %}
+      {% block card_body %}
+        {{ card.body }}
+      {% endblock %}
     </div>
     {% endif %}
     {% if card.footer %}
