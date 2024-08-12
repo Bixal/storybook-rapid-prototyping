@@ -1,0 +1,48 @@
+# 06. Customize components using settings.
+
+In the last exercise, we familiarized ourselves with the USWDS theme settings. In this section, we'll take that a step further by using component specific settings.
+
+1. Visit the [banner component](https://designsystem.digital.gov/components/banner/) page.
+1. Find the "Banner settings" section.
+
+    Each USWDS component with settings will have this section. It is a snapshot of what customizations are possible without needed to write custom styles.
+
+    **Tip:** The [Component settings](https://designsystem.digital.gov/documentation/settings/#component-settings-2) section of the Settings page provides a comprehensive list of all available component settings, their default values, and what type of token or value they take!
+
+1. To get started, lets try updating the font to a serif font. In `uswds-theme.scss`, add the following line to your settings map:\
+    ```scss
+    $theme-banner-font-family: "serif",
+    ```
+1. Easy, right? Let's add a bit more color to our banner. Let's see what would happen if we brought back our accent color:
+    ```scss
+    $theme-banner-background-color: "accent-cool"
+    ```
+    The banner updated, but if you have terminal window open you might have noticed a bunch of contrast warnings pop up. USWDS does our best to ensure appropriate color contrast throughout the design system by setting good defaults. Once the default is changed, we check again where we can to ensure compliance and even try to implement a fallback color if it's not.
+
+    If the automated checks determine neither color meets contrast requirements, we'll allow you to override but give you a warning. If we inspect this warning, we learn that the link color and it's fallback do not meet color contrast minimums. Luckily, there's a setting for that!
+1. Find the setting for the banner link color and a token that we defined in exercise 5 to prevent the contrast error.
+
+    **Tip:** The color should be darker than the `accent-cool` token.
+1. Save the theme file. If you no longer see a warning in your compile log, visit the landing page and confirm the link color is a good match for it's background.
+1. Next, lets use a header [component setting](https://designsystem.digital.gov/components/header/#implementation) to change the breakpoint that it collapses into the mobile nav. Since we don't have many navigation links, lets decrease the screen size needed to trigger the non-mobile header.
+
+    Find the setting that sets the headers minimum width and set it to `mobile-lg`.
+1. Resize your browser window and see if you can notice the difference.
+1. In exercise 5 we increased the sizes of our `sm`, `md`, and `lg` border radius tokens and saw the effects in some components. But what if we want our card border radius to match our buttons?
+
+    Instead of making size tokens the same value, we can change which token card uses for it's border radius!
+    ```scss
+    $theme-card-border-radius: "md",
+    ```
+1. Now that the border radius matches our buttons, our project's developer has requested we increase the card flag variant's image width. Currently it's `card-lg`, lets update it to `mobile`
+    ```scss
+    $theme-card-flag-image-width: "mobile",
+    ```
+1. While this might look alright in desktop views, we know it's important to check for smaller screensizes. Somewhere between mobile and desktop our cards get pretty cramped.
+
+    Luckily, we're getting pretty good at this! Reference the [card settings](https://designsystem.digital.gov/components/card/#using-the-card-component-2) table and find the setting that updates the width which flags change to a horizontal layout. This time, we'll _increase_ the breakpoint size.
+
+    **Tip:** Remember that you can view the default value from full [settings table](https://designsystem.digital.gov/documentation/settings/#component-settings-2)
+1. Resize your browser window and ensure the card content no longer extends beyond it's border.
+
+Great work! In this exercise you've used component settings to update font families, updated component colors and ensured color contrast compliance, and updated breakpoints to better fit the content of our landing page, all without writing any custom (S)CSS.
