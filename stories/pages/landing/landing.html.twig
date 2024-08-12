@@ -1,45 +1,46 @@
 {% extends "@pages/base/base.html.twig" %}
 
 {% block content %}
+
+  {# Hero #}
+  Hero component.
+  {# /Hero #}
+
   <div class="usa-section">
     <div class="grid-container">
       <div
         class="grid-row grid-gap">
-        {# Main content #}
-        <main id="main-content" class="tablet-lg:grid-col-8">
-          {# News section #}
+        <main id="main-content" class="tablet:grid-col-8">
+          {# News #}
           <section id="news">
             <h2>Latest news</h2>
-            News card group.
+            News cards.
           </section>
-          {# /News section #}
+          {# /News #}
         </main>
-        {# /Main content #}
 
-        {# Sidebar #}
         <aside
-          class="tablet-lg:grid-col-4 tablet-lg:margin-top-8">
-          {# Callouts section #}
+          class="tablet:grid-col-4 tablet:margin-top-8">
+          {# Callouts #}
           <section id="callouts">
-            Callouts card group.
+            Callouts cards.
           </section>
-          {# /Callouts section #}
+          {# /Callouts #}
 
-          {# Latest blog posts section #}
+          {# Latest blog posts #}
           <section id="latest-blogs">
             <h3>Latest blog posts</h3>
-            Blog posts collection.
+            Blog Collection.
           </section>
-          {# /Latest blog posts section #}
+          {# /Latest blog posts #}
 
-          {# Events section #}
+          {# Events #}
           <section id="upcoming-events" class="tablet-lg:margin-top-8">
             <h3>Upcoming events</h3>
-            Event collection.
+            Date collection.
           </section>
-          {# /Events section #}
+          {# /Events #}
         </aside>
-        {# /Sidebar #}
       </div>
     </div>
   </div>

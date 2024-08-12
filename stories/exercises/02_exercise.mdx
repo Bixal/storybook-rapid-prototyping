@@ -2,9 +2,9 @@
 
 Visit the Button story docs, you'll see that there isn't anything we can pass to this component to prototype or re-use in other contexts.
 
-We're going to make a dynamic component from a static twig template. Let's add some StorybookJS args to make this component take a variant and custom text.
+Let's add some StorybookJS args to make this component dynamic. We'll add a variant and custom text.
 
-1. Open `./stories/components/button/button.stories.js`.
+1. Open `/stories/components/button/button.stories.js`.
 1. Let's add args to make this customizable. In `args` object add two new args for `variant` and `label`.
    ```js
    // button.stories.js
@@ -20,7 +20,7 @@ We're going to make a dynamic component from a static twig template. Let's add s
 1. To verify that these work, change the Controls. Modify the button label to some custom text or use the USA Button [docs](https://designsystem.digital.gov/components/button/) as a reference to add a new variant, like `outline`.
 1. When you refresh these settings will reset.
 1. We can go further by creating a variant.
-1. Create a new `const` for USA Button Outline variant.
+1. In the story create a new `const` for USA Button Outline variant.
    ```js
    // button.stories.js
    export const Outline = {};
