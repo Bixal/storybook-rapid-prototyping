@@ -1,0 +1,137 @@
+# Creating pages
+
+We'll re-use our components to create a landing page with more realistic looking content.
+
+A base template has already been setup. We only need to import the components we want to use.
+
+1. Add the hero to the `landing.html.twig` template in the commented section for hero.
+
+   ```html
+   {# Hero #} {% include "@components/hero/hero.html.twig" %} {# /Hero #}
+   ```
+
+   You should see the default hero appear.
+
+1. Next, add the card component to the news section. Replace the `News card group` text with an include for the card component.
+
+   ```html
+   {% include "@components/card/cards.html.twig" %}
+   ```
+
+1. Include the following components for each section.
+
+   ```html
+   {# News #}
+   <section id="news">
+     <h2>Latest news</h2>
+     {% include "@components/card/cards.html.twig" %}
+   </section>
+   ```
+
+   ```html
+   {# Callouts #}
+   <section id="callouts">
+     {% include "@components/card/cards.html.twig" %}
+   </section>
+   ```
+
+   ```html
+   {# Latest blog posts #}
+   <section id="latest-blogs">
+     <h3>Latest blog posts</h3>
+     {% include "@components/collection/collection.html.twig" %}
+   </section>
+   ```
+
+   ```html
+   {# Events #}
+   <section id="upcoming-events" class="tablet-lg:margin-top-8">
+     <h3>Upcoming events</h3>
+     {% include "@components/collection/collection.html.twig" %}
+   </section>
+   ```
+
+   Only the hero will render because we don't have any content available for the other components. Let's fix that by re-using stories.
+
+1. Open `landing.stories.js` and import Cards and Collection stories. At the top of the page add the following:
+
+   ```js
+   // landing.stories.js
+   import * as Cards from "../../components/card/card.stories";
+   import * as Collection from "../../components/collection/collection.stories";
+   ```
+
+1. In our const Default add args for the page sections: hero, news, callouts, blogs, and events.
+
+   ```js
+   export const Default = {
+     args: {
+       hero: "",
+       news: "",
+       callouts: "",
+       blogs: "",
+       events: "",
+     },
+   };
+   ```
+
+1. Connect these data sources to the components in `landing.html.twig`.
+
+   ```html
+   {# News #}
+   <section id="news">
+     <h2>Latest news</h2>
+     {% include "@components/card/cards.html.twig" with news %}
+   </section>
+   ```
+
+   ```html
+   {# Callouts #}
+   <section id="callouts">
+     {% include "@components/card/cards.html.twig" with callouts %}
+   </section>
+   ```
+
+   ```html
+   {# Latest blog posts #}
+   <section id="callouts">
+     {% include "@components/collection/collection.html.twig" with blogs %}
+   </section>
+   ```
+
+   ```html
+   {# Events #}
+   <section id="upcoming-events" class="tablet-lg:margin-top-8">
+     <h3>Upcoming events</h3>
+     {% include "@components/collection/collection.html.twig" with events %}
+   </section>
+   ```
+
+1. We can add custom data, but for now we want to connect it to their story defaults. You can pass that data like so:
+
+   ```js
+   export const Default = {
+     args: {
+       hero: "",
+       news: Cards.default.args,
+       callouts: Cards.default.args,
+       blogs: Collection.default.args,
+       events: Collection.default.args,
+     },
+   };
+   ```
+
+1. Components are now rendering, but they're the same. Let's re-use storybook variants in the **Latest News** and **Events** section.
+
+   ```js
+   export const Default = {
+     args: {
+       ...
+       news: Cards.Flag.args,
+       ...
+       events: Collection.Date.args,
+     },
+   };
+   ```
+
+   You'll see the correct variants for these sections. USA Card flag for news and Collection Date for events.

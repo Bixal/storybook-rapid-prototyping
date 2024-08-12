@@ -29,15 +29,17 @@ We've already documented our component variables in `hero.html.twig:5`. Let's ad
 1. Our button is now included, but it's not dynamic. We can fix that with a few changes.
 1. Open `hero.stories.js` and change `cta`'s value from a string to an object that takes a `label` and `variant`.
 
-```js
-  cta: {
-    label: "Hero CTA",
-    variant: "",
-  },
-```
+   ```js
+     cta: {
+       label: "Hero CTA",
+       variant: "",
+     },
+   ```
 
 1. We can use our hero cta to modify button by passing the object in the twig include.
 
-```html
-{% include "@components/button/button.html.twig" with cta %}
-```
+   ```html
+   {% include "@components/button/button.html.twig" with cta %}
+   ```
+
+   Now we can include hero anywhere with custom content.
