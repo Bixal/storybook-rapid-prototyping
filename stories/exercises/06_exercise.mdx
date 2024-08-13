@@ -23,9 +23,13 @@ Each USWDS component with settings will have this section. It is a snapshot of w
     If the automated checks determine neither color meets contrast requirements, we'll allow you to override but give you a warning. If we inspect this warning, we learn that the link color and it's fallback do not meet color contrast minimums.
 
     Luckily, there's a setting for that!
-1. Find the setting for the banner link color and a token that we defined in exercise 5 to prevent the contrast error.
+1. Find the setting for the banner link color and set it to the `primary-darker` theme token.
 
-    **Tip:** The color should be darker than the `accent-cool` token.
+    **Tip:** USWDS color tokens use a 100-point [grading system](https://designsystem.digital.gov/design-tokens/color/overview/#magic-number-2) that ensures values across different color families are equal in lightness.
+
+    A difference of 50+ results in AA color contrast compliance between any two color family tokens! This is known as the [_magic number_](https://designsystem.digital.gov/design-tokens/color/overview/#magic-number-2).
+
+    Since the `accent-cool` token has a grade of `30` and the `primary-darker` token has a grade of `80`, there is a different of 50. This means the two color tokens will have appropriate color contrast from each other.
 1. Save the theme file. If you no longer see a warning in your terminal window, visit the landing page and confirm the link color is a good match for it's background.
 1. Next, lets use a header [component setting](https://designsystem.digital.gov/components/header/#implementation) to change the breakpoint that it collapses into the mobile nav.
 
