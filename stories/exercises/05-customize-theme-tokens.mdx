@@ -10,8 +10,8 @@ Lets start by updating some of our [theme color tokens](https://designsystem.dig
 
 1. Select either color palette (Earth tones or Oceanic)  and copy the SCSS theme settings variables.
 
-      <h2>Colors</h2>
-      <h3>Earth tones</h3>
+      ## Colors
+      ### Earth tones
       <ColorPalette>
         <ColorItem
           title="Base"
@@ -37,9 +37,9 @@ Lets start by updating some of our [theme color tokens](https://designsystem.dig
           }}
         />
       </ColorPalette>
-    
+
       Theme setting values
-    
+
       ```scss
       $theme-color-primary: "green-warm-60v",
       $theme-color-primary-dark: "green-warm-70v",
@@ -50,7 +50,7 @@ Lets start by updating some of our [theme color tokens](https://designsystem.dig
       $theme-color-base-darkest: "yellow-80v",
       $theme-color-accent-cool: "gold-30v",
       ```
-    
+
       <h3>Oceanic</h3>
       <ColorPalette>
         <ColorItem
@@ -77,9 +77,9 @@ Lets start by updating some of our [theme color tokens](https://designsystem.dig
           }}
         />
       </ColorPalette>
-    
+
       Theme setting values
-    `
+
       ```scss
       $theme-color-primary: "cyan-60",
       $theme-color-primary-dark: "cyan-70v",
@@ -91,16 +91,16 @@ Lets start by updating some of our [theme color tokens](https://designsystem.dig
       $theme-color-accent-cool: "mint-cool-30",
       ```
 
-2. Visit `uswds-theme.scss`.
-2. Open `uswds-theme.scss`. Uncomment the `@use 'uswds-core with (...)` section and paste the theme settings from the chosen palette between the parenthesis.
+1. Visit `uswds-theme.scss`.
+1. Open `uswds-theme.scss`. Uncomment the `@use 'uswds-core with (...)` section and paste the theme settings from the chosen palette between the parenthesis.
     ```scss
     // uswds-theme.scss
     @use "uswds-core" with (
       Theme color settings go here
     );
     ```
-4. Save and allow storybook to rebuild. Visit the landing page and view your new theme!
-4. There are many diverse theme settings available. For example, lets update our heavy font weight and increase our border radiuses.
+1. Save and allow storybook to rebuild. Visit the landing page and view your new theme!
+1. There are many diverse theme settings available. For example, lets update our heavy font weight and increase our border radiuses.
     ```scss
     $theme-font-weight-bold: 900,
 
@@ -108,16 +108,16 @@ Lets start by updating some of our [theme color tokens](https://designsystem.dig
     $theme-border-radius-md: 2,
     $theme-border-radius-lg: 3,
     ```
-6. Refresh the page and we'll see our hero heading with the increased font weights, and our rounded margins are increased throughout our components.
+1. Refresh the page and we'll see our hero heading with the increased font weights, and our rounded margins are increased throughout our components.
 
-    If you take a look at the search input within our header, you might have noticed the imbalanced border radius. Since our button border radius is not used on the input, we'll have to update manually. 
-    
+    If you take a look at the search input within our header, you might have noticed the imbalanced border radius. Since our button border radius is not used on the input, we'll have to update manually.
+
     To showcase another great USWDS tool, lets add a utility class to our `input` element.
 
-7. Visit the [border utility](https://designsystem.digital.gov/utilities/border/) page
-7. In the "examples and usage" section, find the find the class that utilizes the **`md` token for the left border radius**.
-7. Open `/stories/components/header/header.html.twig`.
-7. Add the class to the `usa-input` input element tag.
-7. View the header and you'll see the border radius now matches the button! Since we updated the `md` border radius value, the change will be reflected _everywhere_ the `md` border radius is used!
+1. Visit the [border utility](https://designsystem.digital.gov/utilities/border/) page
+1. In the "examples and usage" section, find the find the class that utilizes the **`md` token for the left border radius**.
+1. Open `/stories/components/header/header.html.twig`.
+1. Add the class to the `usa-input` input element tag.
+1. View the header and you'll see the border radius now matches the button! Since we updated the `md` border radius value, the change will be reflected _everywhere_ the `md` border radius is used!
 
 Now that we know how to use theme settings, lets take a look at component settings in exercise 6.
