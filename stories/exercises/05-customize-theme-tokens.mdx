@@ -2,11 +2,11 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
 
 # 05. Customize with theme tokens
 
-With content on our landing page, we're going to make sweeping changes using USWDS Design Tokens and theme settings.
+With content on the landing page, we're going to make sweeping changes using USWDS Design Tokens and theme settings.
 
 You can view all available theme settings by visiting the [USWDS Settings Table](https://designsystem.digital.gov/documentation/settings/#general-settings-2).
 
-Lets start by updating some of our [theme color tokens](https://designsystem.digital.gov/documentation/settings/#color-settings-2). USWDS theme color tokens are designed to be useful and effective for any project size.
+Lets start by updating some of the [theme color tokens](https://designsystem.digital.gov/documentation/settings/#color-settings-2). USWDS theme color tokens are designed to be useful and effective for any project size.
 
 1. Select either color palette (Earth tones or Oceanic)  and copy the SCSS theme settings variables.
 
@@ -102,7 +102,7 @@ Lets start by updating some of our [theme color tokens](https://designsystem.dig
     );
     ```
 1. Save and allow storybook to rebuild. Visit the landing page and view your new theme!
-1. There are many diverse theme settings available. For example, lets update our heavy font weight and increase our border radiuses.
+1. There are many diverse theme settings available. For example, lets update the heavy font weight and increase the border radius tokens.
     ```scss
     $theme-font-weight-bold: 900,
 
@@ -110,11 +110,11 @@ Lets start by updating some of our [theme color tokens](https://designsystem.dig
     $theme-border-radius-md: 2,
     $theme-border-radius-lg: 3,
     ```
-1. Refresh the page and we'll see our hero heading with the increased font weights, and our rounded margins are increased throughout our components.
+1. Refresh the page and we'll see the hero heading with the increased font weights, and the corners of the components are more round.
 
-    If you take a look at the search input within our header, you might have noticed the imbalanced border radius. Since our button border radius is not used on the input, we'll have to update manually.
+    If you take a look at the search input within the header, you might have noticed the imbalanced border radius. Since the button border radius is not used on the input, we'll have to update manually.
 
-    To showcase another great USWDS tool, lets add a utility class to our `input` element.
+    To showcase another great USWDS tool, lets add a utility class to the `input` element.
 
 1. Visit the [border utility](https://designsystem.digital.gov/utilities/border/) page
 1. In the "examples and usage" section, find the find the class that utilizes the **`md` token for the left border radius**.
