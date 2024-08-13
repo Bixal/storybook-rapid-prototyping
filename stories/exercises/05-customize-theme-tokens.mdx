@@ -2,104 +2,107 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
 
 # 05. Customize with theme tokens
 
-Now that we have content on our landing page, we're going look at how we can make wide sweeping changes using USWDS Design Tokens and theme settings.
+With content on the landing page, we're going to make sweeping changes using USWDS Design Tokens and theme settings.
 
-You can view the available theme settings by visiting the [USWDS Settings Table](https://designsystem.digital.gov/documentation/settings/#general-settings-2).
+You can view all available theme settings by visiting the [USWDS Settings Table](https://designsystem.digital.gov/documentation/settings/#general-settings-2).
 
-Lets start by updating some of our [theme color tokens](https://designsystem.digital.gov/documentation/settings/#color-settings-2). USWDS theme color tokens are designed to be useful and effective for small and large projects.
+USWDS theme color tokens are designed to be useful and effective for any project size. Let's start by updating some of our [theme color tokens](https://designsystem.digital.gov/documentation/settings/#color-settings-2).
 
-1. Pick a color palette and copy SCSS variables.
+1. Select either color palette (Earth tones or Oceanic) and copy the SCSS theme settings variables.
 
-  <h2>Colors</h2>
-  <h3>Earth tones</h3>
-  <ColorPalette>
-    <ColorItem
-      title="Base"
-      subtitle="Base colors"
-      colors={{
-        'yellow-5v': '#fff5c2',
-        'yellow-10': '#f5e6af',
-        'yellow-30v': '#ddaa01',
-        'yellow-80v': '#422d19',
-      }}
-    />
-    <ColorItem
-      title="Primary"
-      colors={{
-        'green-warm-60v': '#5a6613',
-        'green-warm-70v': '#4b4e10',
-      }}
-    />
-    <ColorItem
-      title="Accent"
-      colors={{
-        'gold-30v': '#e5a000',
-      }}
-    />
-  </ColorPalette>
+      ## Colors
+      
+      ### Earth tones
+      <ColorPalette>
+        <ColorItem
+          title="Base"
+          subtitle="Base colors"
+          colors={{
+            'yellow-5v': '#fff5c2',
+            'yellow-10': '#f5e6af',
+            'yellow-30v': '#ddaa01',
+            'yellow-80v': '#422d19',
+          }}
+        />
+        <ColorItem
+          title="Primary"
+          colors={{
+            'green-warm-60v': '#5a6613',
+            'green-warm-70v': '#4b4e10',
+          }}
+        />
+        <ColorItem
+          title="Accent"
+          colors={{
+            'gold-30v': '#e5a000',
+          }}
+        />
+      </ColorPalette>
 
-  Theme setting values
+      Theme setting values
 
-  ```scss
-  $theme-color-primary: "green-warm-60v",
-  $theme-color-primary-dark: "green-warm-70v",
-  $theme-color-primary-darker: "green-warm-80v",
-  $theme-color-base-lightest: "yellow-5v",
-  $theme-color-base-lighter: "yellow-10",
-  $theme-color-base-light: "yellow-30v",
-  $theme-color-base-darkest: "yellow-80v",
-  $theme-color-accent-cool: "gold-30v",
-  ```
+      ```scss
+      $theme-color-primary: "green-warm-60v",
+      $theme-color-primary-dark: "green-warm-70v",
+      $theme-color-primary-darker: "green-warm-80v",
+      $theme-color-base-lightest: "yellow-5v",
+      $theme-color-base-lighter: "yellow-10",
+      $theme-color-base-light: "yellow-30v",
+      $theme-color-base-darkest: "yellow-80v",
+      $theme-color-accent-cool: "gold-30v",
+      $theme-color-accent-cool-dark: "gold-50v",
+      ```
 
-  <h3>Oceanic</h3>
-  <ColorPalette>
-    <ColorItem
-      title="Base"
-      subtitle="Base colors"
-      colors={{
-        'blue-cool-5': '#e7f2f5',
-        'blue-cool-10': '#dae9ee',
-        'blue-cool-30': '#82b4c9',
-        'blue-cool-80': '#14333d',
-      }}
-    />
-    <ColorItem
-      title="Primary"
-      colors={{
-        'cyan-60': '#2a646d',
-        'cyan-70v': '#0e4f5c',
-      }}
-    />
-    <ColorItem
-      title="Accent"
-      colors={{
-        'mint-cool-30': '#6fbab3',
-      }}
-    />
-  </ColorPalette>
+      ### Oceanic
+      <ColorPalette>
+        <ColorItem
+          title="Base"
+          subtitle="Base colors"
+          colors={{
+            'blue-cool-5': '#e7f2f5',
+            'blue-cool-10': '#dae9ee',
+            'blue-cool-30': '#82b4c9',
+            'blue-cool-80': '#14333d',
+          }}
+        />
+        <ColorItem
+          title="Primary"
+          colors={{
+            'cyan-60': '#2a646d',
+            'cyan-70v': '#0e4f5c',
+          }}
+        />
+        <ColorItem
+          title="Accent"
+          colors={{
+            'mint-cool-30': '#6fbab3',
+          }}
+        />
+      </ColorPalette>
 
-  Theme setting values
-`
-  ```scss
-  $theme-color-primary: "cyan-60",
-  $theme-color-primary-dark: "cyan-70v",
-  $theme-color-primary-darker: "cyan-80v",
-  $theme-color-base-lightest: "blue-cool-5",
-  $theme-color-base-lighter: "blue-cool-10",
-  $theme-color-base-light: "blue-cool-30",
-  $theme-color-base-darkest: "blue-cool-80",
-  $theme-color-accent-cool: "mint-cool-30",
-  ```
+      Theme setting values
 
-2. Visit `uswds-theme.scss`.
-2. Uncomment the `@use 'uswds-core with (...)` section and paste the theme settings from the chosen palette between the parenthesis.
+      ```scss
+      $theme-color-primary: "cyan-60",
+      $theme-color-primary-dark: "cyan-70v",
+      $theme-color-primary-darker: "cyan-80v",
+      $theme-color-base-lightest: "blue-cool-5",
+      $theme-color-base-lighter: "blue-cool-10",
+      $theme-color-base-light: "blue-cool-30",
+      $theme-color-base-darkest: "blue-cool-80",
+      $theme-color-accent-cool: "mint-cool-30",
+      $theme-color-accent-cool-dark: "mint-cool-50",
+      ```
+
+1. Open `uswds-theme.scss`. Uncomment the `@use 'uswds-core with (...)` section and paste the theme settings from the chosen palette between the parenthesis.
     ```scss
+    // uswds-theme.scss
     @use "uswds-core" with (
       Theme color settings go here
     );
     ```
-4. Save and allow storybook to rebuild. Visit the landing page and view your new theme!
-4. To showcase additional theme settings that we have available, lets update our heavy font weight and increase our border radiuses.
+1. Save and allow storybook to rebuild. Visit the landing page and view your new theme!
+1. There are many diverse theme settings available. For example, lets update the heavy font weight and increase the border radius tokens.
     ```scss
     $theme-font-weight-bold: 900,
 
@@ -107,14 +110,16 @@ Lets start by updating some of our [theme color tokens](https://designsystem.dig
     $theme-border-radius-md: 2,
     $theme-border-radius-lg: 3,
     ```
-6. Refresh the page and we'll see our hero heading with the increased font weights, and our rounded margins are increased throughout our components.
+1. Refresh the page and we'll see the hero heading with the increased font weights, and the corners of the components are more round.
 
-    If you take a look at the search input within our header, you might have noticed the imbalanced border radius. Since our button border radius is not used on the input, we'll have to update manually. To showcase another great USWDS tool, lets add a utility class to our `input` element.
+    If you take a look at the search input within the header, you might have noticed the imbalanced border radius. Since the button border radius is not used on the input, we'll have to update manually.
 
-7. Visit the [border utility](https://designsystem.digital.gov/utilities/border/) page
-7. In the "examples and usage" section, find the find the class that utilizes the **`md` token for the left border radius**.
-7. Open `/stories/components/header/header.html.twig`.
-7. Add the class to the `usa-input` input element tag.
-7. View the header and you'll see the border radius now matches the button! Since we updated the `md` border radius value, the change will be reflected _everywhere_ the `md` border radius is used!
+    To showcase another great USWDS tool, lets add a utility class to the `input` element.
+
+1. Visit the [border utility](https://designsystem.digital.gov/utilities/border/) page
+1. In the "examples and usage" section, find the find the class that utilizes the **`md` token for the left border radius**.
+1. Open `/stories/components/header/header.html.twig`.
+1. Add the class to the `usa-input` input element tag.
+1. View the header and you'll see the border radius now matches the button! Since we updated the `md` border radius value, the change will be reflected _everywhere_ the `md` border radius is used!
 
 Now that we know how to use theme settings, lets take a look at component settings in exercise 6.
