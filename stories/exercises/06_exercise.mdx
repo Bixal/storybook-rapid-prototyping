@@ -18,6 +18,11 @@ Each USWDS component with settings will have this section. It is a snapshot of w
     ```
     The banner background color updated, but if you take a close at the banner link the contrast doesn't look great. If you take a look at the script running in the terminal window you'll notice a bunch of color contrast warnings have popped up.
 
+    ```sh
+    Warning: [Banner] Neither the specified preferred link color token (`base-lighter`) nor the fallback link color token (`primary`) have AA contrast on a `accent-cool` background. Using `primary`. Please check your source code and project settings.
+    node_modules/@uswds/uswds/packages/uswds-core/src/styles/functions/color/get-color-token-from-bg.scss 65:7   get-color-token-from-bg()
+    ```
+
     USWDS does its best to ensure appropriate color contrast throughout the design system by setting good defaults. If a value is changed, it will check again where possible to ensure compliance. If the new color does not meet compliance standards, a fallback will be used.
 
     If the automated checks determine neither color meets contrast requirements, we'll allow you to override but give you a warning. If we inspect this warning, we learn that the link color and it's fallback do not meet color contrast minimums.
