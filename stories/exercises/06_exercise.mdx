@@ -9,54 +9,62 @@ Each USWDS component with settings will have this section. It is a snapshot of w
 1. Look over the available banner theme settings on the "Banner settings" section of the [component page](https://designsystem.digital.gov/components/banner/).
 
 1. To get started, lets try updating the font to a serif font. In `uswds-theme.scss`, add the following line to your settings map:
-    ```scss
-    $theme-banner-font-family: "serif",
-    ```
+   ```scss
+   $theme-banner-font-family: "serif";
+   ```
 1. Easy, right? Let's add a bit more color to our banner. Let's see what would happen if we brought back our accent color:
-    ```scss
-    $theme-banner-background-color: "accent-cool"
-    ```
-    The banner background color updated, but if you take a close at the banner link the contrast doesn't look great. If you take a look at the script running in the terminal window you'll notice a bunch of color contrast warnings have popped up.
 
-    ```sh
-    Warning: [Banner] Neither the specified preferred link color token (`base-lighter`) nor the fallback link color token (`primary`) have AA contrast on a `accent-cool` background. Using `primary`. Please check your source code and project settings.
-    node_modules/@uswds/uswds/packages/uswds-core/src/styles/functions/color/get-color-token-from-bg.scss 65:7   get-color-token-from-bg()
-    ```
+   ```scss
+   $theme-banner-background-color: "accent-cool";
+   ```
 
-    **Note:** USWDS does its best to ensure appropriate color contrast throughout the design system by setting good defaults. If a value is changed, it will check again where possible to ensure compliance. If the new color does not meet compliance standards, a fallback will be used.
+   The banner background color updated, but if you take a close at the banner link the contrast doesn't look great. If you take a look at the script running in the terminal window you'll notice a bunch of color contrast warnings have popped up.
 
-    If the automated checks determine neither color meets contrast requirements, USWDS will accept the override with a contrast warning. If we inspect this warning, we learn that the link color and it's fallback do not meet color contrast minimums.
+   ```sh
+   Warning: [Banner] Neither the specified preferred link color token (`base-lighter`) nor the fallback link color token (`primary`) have AA contrast on a `accent-cool` background. Using `primary`. Please check your source code and project settings.
+   node_modules/@uswds/uswds/packages/uswds-core/src/styles/functions/color/get-color-token-from-bg.scss 65:7   get-color-token-from-bg()
+   ```
 
-    Luckily, there's a setting for that!
+   **Note:** USWDS does its best to ensure appropriate color contrast throughout the design system by setting good defaults. If a value is changed, it will check again where possible to ensure compliance. If the new color does not meet compliance standards, a fallback will be used.
+
+   If the automated checks determine neither color meets contrast requirements, USWDS will accept the override with a contrast warning. If we inspect this warning, we learn that the link color and it's fallback do not meet color contrast minimums.
+
+   Luckily, there's a setting for that!
+
 1. Find the setting for the banner link color and set it to the `primary-darker` theme token.
 
-    **Tip:** USWDS color tokens use a 100-point [grading system](https://designsystem.digital.gov/design-tokens/color/overview/#magic-number-2) that ensures values across different color families are equal in lightness.
+   **Tip:** USWDS color tokens use a 100-point [grading system](https://designsystem.digital.gov/design-tokens/color/overview/#magic-number-2) that ensures values across different color families are equal in lightness.
 
-    A difference of 50+ results in AA color contrast compliance between any two color family tokens! This is known as the [_magic number_](https://designsystem.digital.gov/design-tokens/color/overview/#magic-number-2).
+   A difference of 50+ results in AA color contrast compliance between any two color family tokens! This is known as the [_magic number_](https://designsystem.digital.gov/design-tokens/color/overview/#magic-number-2).
 
-    Since the `accent-cool` token has a grade of `30` and the `primary-darker` token has a grade of `80`, there is a different of 50. This means the two color tokens will have appropriate color contrast from each other.
+   Since the `accent-cool` token has a grade of `30` and the `primary-darker` token has a grade of `80`, there is a different of 50. This means the two color tokens will have appropriate color contrast from each other.
+
 1. Save the theme file. If you no longer see a warning in your terminal window, visit the landing page and confirm the link color is a good match for it's background.
 1. Next, lets use a header [component setting](https://designsystem.digital.gov/components/header/#implementation) to change the breakpoint that it collapses into the mobile nav.
 
-    Since we don't have many navigation links, lets decrease the screen size needed to trigger the non-mobile header.
+   Since we don't have many navigation links, lets decrease the screen size needed to trigger the non-mobile header.
 
-    Find the setting that sets the headers minimum width and set it to `mobile-lg`.
+   Find the setting that sets the headers minimum width and set it to `mobile-lg`.
+
 1. Resize your browser window and see if you can notice the difference.
 1. In exercise 5 we increased the sizes of our `sm`, `md`, and `lg` border radius tokens and saw the effects in some components. But what if we want our card border radius to match our buttons?
 
-    Instead of making the size tokens the same value, we can change which token the card component uses for it's border radius!
-    ```scss
-    $theme-card-border-radius: "md",
-    ```
+   Instead of making the size tokens the same value, we can change which token the card component uses for it's border radius!
+
+   ```scss
+   $theme-card-border-radius: "md";
+   ```
+
 1. Now that the border radius matches our buttons, our project's designer has requested we increase the card flag variant's image width. Currently it's `card-lg`, lets update it to `mobile`.
-    ```scss
-    $theme-card-flag-image-width: "mobile",
-    ```
+   ```scss
+   $theme-card-flag-image-width: "mobile";
+   ```
 1. While this might look alright in desktop views, we know it's important to check for smaller screen sizes. Somewhere between mobile and desktop our cards get pretty cramped.
 
-    Luckily, we're getting pretty good at this! Reference the [card settings](https://designsystem.digital.gov/components/card/#using-the-card-component-2) table and find the setting that updates the width which flags change to a horizontal layout. This time, we'll _increase_ the breakpoint size.
+   Luckily, we're getting pretty good at this! Reference the [card settings](https://designsystem.digital.gov/components/card/#using-the-card-component-2) table and find the setting that updates the width which flags change to a horizontal layout. This time, we'll _increase_ the breakpoint size.
 
-    **Tip:** Remember that you can view the default value and available values from the complete [settings table](https://designsystem.digital.gov/documentation/settings/#component-settings-2).
+   **Tip:** Remember that you can view the default value and available values from the complete [settings table](https://designsystem.digital.gov/documentation/settings/#component-settings-2).
+
 1. Resize your browser window and ensure the card content no longer extends beyond it's border.
 
 Great work! In this exercise you've used component settings to update font families, updated component colors and ensured color contrast compliance, and updated breakpoints to better fit the content of our landing page, all without writing any custom (S)CSS.
