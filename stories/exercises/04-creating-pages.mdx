@@ -75,6 +75,20 @@ A base template has already been setup. We only need to import the components we
    };
    ```
 
+1. We can add custom data, but for now we want to connect it to their story defaults. You can pass that data like so:
+
+   ```js
+   export const Default = {
+     args: {
+       hero: "",
+       news: Cards.default.args,
+       callouts: Cards.default.args,
+       blogs: Collection.default.args,
+       events: Collection.default.args,
+     },
+   };
+   ```
+
 1. Connect these data sources to the components in `landing.html.twig`.
 
    ```html
@@ -105,20 +119,6 @@ A base template has already been setup. We only need to import the components we
      <h3>Upcoming events</h3>
      {% include "@components/collection/collection.html.twig" with events %}
    </section>
-   ```
-
-1. We can add custom data, but for now we want to connect it to their story defaults. You can pass that data like so:
-
-   ```js
-   export const Default = {
-     args: {
-       hero: "",
-       news: Cards.default.args,
-       callouts: Cards.default.args,
-       blogs: Collection.default.args,
-       events: Collection.default.args,
-     },
-   };
    ```
 
 1. Components are now rendering, but they're the same. Let's re-use storybook variants in the **Latest News** and **Events** section.
