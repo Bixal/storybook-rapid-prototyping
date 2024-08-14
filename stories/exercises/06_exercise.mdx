@@ -46,10 +46,10 @@ Each USWDS component with settings will have this section. It is a snapshot of w
 
    Since we don't have many navigation links, lets decrease the screen size needed to trigger the non-mobile header.
 
-   Find the setting that sets the headers minimum width and set it to `mobile-lg`.
+   Find the setting that defines the headers minimum width and set it to `mobile-lg`.
 
 1. Resize your browser window and see if you can notice the difference.
-1. In exercise 5 we increased the sizes of our `sm`, `md`, and `lg` border radius tokens and saw the effects in some components. But what if we want our card border radius to match our buttons?
+1. In exercise 5 we increased the sizes of our border radius tokens: `sm`, `md`, and `lg`. We saw the effects in some components. But what if we want our card border radius to match our buttons?
 
    Instead of making the size tokens the same value, we can change which token the card component uses for it's border radius!
 
@@ -61,7 +61,7 @@ Each USWDS component with settings will have this section. It is a snapshot of w
    ```scss
    $theme-card-flag-image-width: "mobile";
    ```
-1. While this might look alright in desktop views, we know it's important to check for smaller screen sizes. Somewhere between mobile and desktop our cards get pretty cramped.
+1. While this might look alright on larger screens, we know it's important to check for smaller screen sizes. Somewhere between mobile and desktop our cards get pretty cramped.
 
    Luckily, we're getting pretty good at this! Reference the [card settings](https://designsystem.digital.gov/components/card/#using-the-card-component-2) table and find the setting that updates the width which flags change to a horizontal layout. This time, we'll _increase_ the breakpoint size.
 
