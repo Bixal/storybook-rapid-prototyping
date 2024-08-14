@@ -1,6 +1,6 @@
 # Rapid prototyping starter kit
 
-Rapid prototyping using StorybookJS, US Web Design System (USWDS), and Drupal Twig.
+Rapid prototyping using StorybookJS, US Web Design System (USWDS), and Drupal Twig. No prior knowledge necessary.
 
 ## Tech stack
 
