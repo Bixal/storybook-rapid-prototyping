@@ -10,12 +10,12 @@ Each USWDS component with settings will have this section. It is a snapshot of w
 
 1. To get started, lets try updating the font to a serif font. In `uswds-theme.scss`, add the following line to your settings map:
    ```scss
-   $theme-banner-font-family: "serif";
+   $theme-banner-font-family: "serif",
    ```
 1. Easy, right? Let's add a bit more color to our banner. Let's see what would happen if we brought back our accent color:
 
    ```scss
-   $theme-banner-background-color: "accent-cool";
+   $theme-banner-background-color: "accent-cool",
    ```
 
    The banner background color updated, but if you take a close look at the banner link the contrast doesn't look great.
@@ -54,12 +54,12 @@ Each USWDS component with settings will have this section. It is a snapshot of w
    Instead of making the size tokens the same value, we can change which token the card component uses for it's border radius!
 
    ```scss
-   $theme-card-border-radius: "md";
+   $theme-card-border-radius: "md",
    ```
 
 1. Now that the border radius matches our buttons, our project's designer has requested we increase the card flag variant's image width. Currently it's `card-lg`, lets update it to `mobile`.
    ```scss
-   $theme-card-flag-image-width: "mobile";
+   $theme-card-flag-image-width: "mobile",
    ```
 1. While this might look alright on larger screens, we know it's important to check for smaller screen sizes. Somewhere between mobile and desktop our cards get pretty cramped.
 
