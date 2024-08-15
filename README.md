@@ -4,6 +4,9 @@ Rapid prototyping using StorybookJS, US Web Design System (USWDS), and Drupal Tw
 
 ## Tech stack
 
+> [!CAUTION]
+> There are some compatibility issues with StorybookJS Vite on Windows. Please use windows subsystem linux. We're looking into ways to fix this #27.
+
 - **Node:** LTS 20+, recommend [NVM](https://github.com/nvm-sh/nvm#installing-and-updating) to manage different node versions.
 - **Component library:** StorybookJS w/ Vite
 - **Templates:** [Drupal Twig](https://github.com/larowlan/vite-plugin-twig-drupal)
