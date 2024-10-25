@@ -15,18 +15,18 @@
   "license": "ISC",
   "devDependencies": {
     "@chromatic-com/storybook": "^1.7.0",
-    "@storybook/addon-essentials": "^8.2.9",
-    "@storybook/addon-interactions": "^8.2.9",
-    "@storybook/addon-links": "^8.2.9",
-    "@storybook/blocks": "^8.2.9",
-    "@storybook/html": "^8.2.9",
-    "@storybook/html-vite": "^8.2.9",
-    "@storybook/test": "^8.2.9",
-    "sass": "^1.77.6",
-    "storybook": "^8.2.9",
-    "vite-plugin-twig-drupal": "^1.4.0"
+    "@storybook/addon-essentials": "^8.3.6",
+    "@storybook/addon-interactions": "^8.3.6",
+    "@storybook/addon-links": "^8.3.6",
+    "@storybook/blocks": "^8.3.6",
+    "@storybook/html": "^8.3.6",
+    "@storybook/html-vite": "^8.3.6",
+    "@storybook/test": "^8.3.6",
+    "sass": "^1.80.4",
+    "storybook": "^8.3.6",
+    "vite-plugin-twig-drupal": "^1.4.2"
   },
   "dependencies": {
-    "@uswds/uswds": "^3.8.2"
+    "@uswds/uswds": "^3.9.0"
   }
 }
