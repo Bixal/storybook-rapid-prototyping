@@ -14,19 +14,19 @@
   "author": "james.mejia@bixal.com",
   "license": "ISC",
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.7.0",
-    "@storybook/addon-essentials": "^8.3.6",
-    "@storybook/addon-interactions": "^8.3.6",
-    "@storybook/addon-links": "^8.3.6",
-    "@storybook/blocks": "^8.3.6",
-    "@storybook/html": "^8.3.6",
-    "@storybook/html-vite": "^8.3.6",
-    "@storybook/test": "^8.3.6",
-    "sass": "^1.80.4",
-    "storybook": "^8.3.6",
-    "vite-plugin-twig-drupal": "^1.4.2"
+    "@chromatic-com/storybook": "3.2.6",
+    "@storybook/addon-essentials": "8.6.12",
+    "@storybook/addon-interactions": "8.6.12",
+    "@storybook/addon-links": "8.6.12",
+    "@storybook/blocks": "8.6.12",
+    "@storybook/html": "8.6.12",
+    "@storybook/html-vite": "8.6.12",
+    "@storybook/test": "8.6.12",
+    "sass": "1.87.0",
+    "storybook": "8.6.12",
+    "vite-plugin-twig-drupal": "1.6.0"
   },
   "dependencies": {
-    "@uswds/uswds": "^3.9.0"
+    "@uswds/uswds": "3.12.0"
   }
 }
