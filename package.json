@@ -14,13 +14,13 @@
   "author": "james.mejia@bixal.com",
   "license": "ISC",
   "devDependencies": {
-    "@chromatic-com/storybook": "5.0.1",
-    "@storybook/addon-links": "10.2.14",
-    "@storybook/html-vite": "10.2.14",
-    "sass": "1.97.3",
-    "storybook": "10.2.14",
+    "@chromatic-com/storybook": "5.1.1",
+    "@storybook/addon-links": "10.3.3",
+    "@storybook/html-vite": "10.3.3",
+    "sass": "1.98.0",
+    "storybook": "10.3.3",
     "vite-plugin-twig-drupal": "1.6.2",
-    "@storybook/addon-docs": "10.2.14"
+    "@storybook/addon-docs": "10.3.3"
   },
   "dependencies": {
     "@uswds/uswds": "3.13.0"
