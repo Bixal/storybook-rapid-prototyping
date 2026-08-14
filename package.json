@@ -18,8 +18,8 @@
     "@storybook/addon-links": "10.4.1",
     "@storybook/html-vite": "10.4.1",
     "sass": "1.100.0",
-    "storybook": "10.4.1",
-    "vite-plugin-twig-drupal": "1.6.2",
+    "storybook": "10.5.8",
+    "vite-plugin-twig-drupal": "1.7.0",
     "@storybook/addon-docs": "10.4.1"
   },
   "dependencies": {
